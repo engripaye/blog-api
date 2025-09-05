@@ -6,6 +6,11 @@ class BlogCreate(BaseModel):
     content: str
 
 
+class BlogUpdate(BaseModel):
+    title: str | None = None
+    content: str | None = None
+
+
 class BlogResponse(BlogCreate):
     id: int
 
