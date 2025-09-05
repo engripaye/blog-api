@@ -53,3 +53,4 @@ def test_delete_blog():
     assert response.status_code == 200
     data = response.json()
     assert f"Blog {blog_id} deleted successfully" in data["message"]
+
