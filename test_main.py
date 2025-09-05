@@ -29,12 +29,12 @@ def test_get_blog_by_id():
     response = client.get("/blogs/2")
     assert response.status_code == 200
     data = response.json()
-    assert data["id"] == 1
+    assert data["id"] == 2
 
 
 # TEST UPDATE BLOG
 def test_update_blog():
-    response = client.put("/blogs/1", json={"title": "Updated Title", "content": "Updated Content"})
+    response = client.put("/blogs/2", json={"title": "Updated Title", "content": "Updated Content"})
     assert response.status_code == 200
     data = response.json()
     assert data["title"] == "Updated Title"
