@@ -25,8 +25,8 @@ def test_get_all_blogs():
 
 # TEST GET BLOG BY ID
 def test_get_blog_by_id():
-    # Assuming blog with ID 1 exists
-    response = client.get("/blogs/1")
+    # Assuming blog with ID 2 exists
+    response = client.get("/blogs/2")
     assert response.status_code == 200
     data = response.json()
     assert data["id"] == 1
