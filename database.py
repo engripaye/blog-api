@@ -5,8 +5,8 @@ from sqlalchemy.orm import sessionmaker
 # SQLite Database url
 SQLALCHEMY_DATABASE_URL = "sqlite:///./blog.db"
 
-# ENGINE
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": "false"})
+# ENGINE -- fix thread issue with SQLite
+engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 
 # session
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

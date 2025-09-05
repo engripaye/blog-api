@@ -43,7 +43,7 @@ def read_blog(blog_id: int, db: Session = Depends(get_db)):
 
 
 # Update Blog by id
-@app.put("/blogs/{blog_id", response_model=schemas.BlogResponse)
+@app.put("/blogs/{blog_id}", response_model=schemas.BlogResponse)
 def update_blog(blog_id: int, blog_update: schemas.BlogUpdate, db: Session = Depends(get_db)):
     updated_blog = crud.update_blog(db=db, blog_id=blog_id, blog_update=blog_update)
     if not update_blog:
