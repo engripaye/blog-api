@@ -41,3 +41,11 @@ def delete_blog(db: Session, blog_id: int):
         db.commit()
         return True
     return False
+
+
+def deleteUpdated_blog(db: Session):
+    blogs = db.query(models.Blog).all()
+    for blog in blogs:
+        db.delete(blog)
+    db.commit()
+    return True
